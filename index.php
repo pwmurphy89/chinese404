@@ -36,13 +36,14 @@
 			<div class="date">
 				<?php
 					$timestamp_as_unix = strtotime($post['timestamp']);
-					print date("D F j, Y", $timestamp_as_unix);
+					print date("D F j, Y, h:ia", $timestamp_as_unix);
 				?>
 			</div>
 
 			<?php foreach($replies as $reply): ?>
 				<?php if($reply['randomID'] == $post['randomID']): ?>
 					<div class="reply-text" style="margin:20px;">
+						<div class="user"><?php print $reply['username']; ?></div>
 						<?php print $reply['reply_text']; ?>
 						<div class="date">
 							<?php
