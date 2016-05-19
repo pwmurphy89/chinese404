@@ -1,0 +1,28 @@
+#nav{
+	height: 100px;
+	background-color: black;
+	color: white;
+}
+#home{
+	float:left;
+	a{
+		padding: 20px;
+	}
+}
+#login{
+	float:right;
+	a{
+		float: right;
+		padding: 20px;
+	}
+}
+.container{
+	width:100%;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+#body{
+	height: 200px;
+	background-image: url('mantary.jpg');
+	
+}
