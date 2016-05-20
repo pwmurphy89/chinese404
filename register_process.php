@@ -4,10 +4,8 @@
 	error_reporting(E_ALL);
 	session_start();
 	require_once 'includes/meekrodb.2.3.class.php';
-	DB::$user = 'x';
-	DB::$password = 'x';
-	DB::$dbName = 'mantaray';
-	DB::$host = '127.0.0.1';
+	require_once 'includes/db_connect.php';
+
 	DB::$error_handler = false; // since we're catching errors, don't need error handler
 	DB::$throw_exception_on_error = true;
 

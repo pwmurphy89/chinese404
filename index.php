@@ -8,62 +8,78 @@
 	require_once 'includes/header.php';
 	date_default_timezone_set('America/New_York');
 
-	$posts = DB::query("SELECT * FROM posts");
-	$replies = DB::query("SELECT * FROM replies");
+	$replies = DB::query("SELECT replies.*, COALESCE(SUM(votes.vote_direction),0) as aggregateVotes
+        FROM replies
+        LEFT JOIN votes ON replies.id = votes.p_id 
+        GROUP BY replies.id ORDER BY aggregateVotes DESC");
+
+	$posts = DB::query("SELECT * FROM posts ORDER BY timestamp DESC; ");
 ?>
-<body>
-  <div><h1>View messages and make posts below :)</h1></div>
-	<?php if($_SESSION['username']): ?>
-		<form action="post_process.php" method="post">
-			<div class="form-group">
-				<label for="post">POST</label>
-			    <textarea id="post-text" name ="post_text"></textarea>
+  <div class="text-center"><h3>POSTS</h3></div>
+	<?php if (isset($_SESSION['username'])): ?>
+		<div class="container">
+			<div id="init-post" class="row">
+				<div class="form-group col-sm-10 col-sm-offset-1">
+					<form action="post_process.php" method="post">
+						<label for="post">POST</label>
+					    <textarea id="post-text" name ="post_text"></textarea>
+						<button type="submit" class="btn btn-default">Post</button>
+					</form>
+				</div>
 			</div>
-			<button type="submit" class="btn btn-default">Post</button>
-		</form>
+		</div>
 	<?php else: ?>
-		<h3>You must be <a href="login.php">logged in</a>to post a message.</h3>
+		<div class="text-center">Please <a href="login.php">login</a> to post</div>
 	<?php endif; ?>
 
 	<?php foreach($posts as $post): ?>
-		<div class="post" style="margin:20px;">
-			<div class="user">
-				<?php print $post['username']; ?>
-			</div>
-			<div class="text">
-				<?php print $post['postText']; ?>
-			</div>
-			<div class="date">
-				<?php
-					$timestamp_as_unix = strtotime($post['timestamp']);
-					print date("D F j, Y, h:ia", $timestamp_as_unix);
-				?>
+		<div class="container">
+			<div class="post-messages col-sm-12">
+				<div class="user">
+					<?php print $post['username']. " posted:"; ?>
+				</div>
+				<div class="text">
+					<?php print $post['postText']; ?>
+				</div>
+				<div class="date">on
+					<?php
+						$timestamp_as_unix = strtotime($post['timestamp']);
+						print date("D F j, Y, h:ia", $timestamp_as_unix);
+					?>
+				</div>
 			</div>
 
 			<?php foreach($replies as $reply): ?>
 				<?php if($reply['randomID'] == $post['randomID']): ?>
-					<div class="reply-text" style="margin:20px;">
-						<div class="user"><?php print $reply['username']; ?></div>
-						<?php print $reply['reply_text']; ?>
-						<div class="date">
-							<?php
-								$timestamp_as_unix = strtotime($reply['timestamp']);
-								print date("D F j, Y", $timestamp_as_unix);
-							?>
+					<div class="col-sm-10 col-sm-offset-1 reply-info">
+						<div class="reply-messages col-sm-8">
+							<div class="user-reply"><?php print $reply['username']." replied:"; ?></div>
+							<div class="text-reply"><?php print $reply['reply_text']; ?></div>
+							<div class="date-reply">on
+								<?php
+									$timestamp_as_unix = strtotime($reply['timestamp']);
+									print date("D F j, Y", $timestamp_as_unix);
+								?>
+							</div>
+						</div>
+						<div class="vote-info col-sm-4">
+							<div id="<?php print $reply['id'];?>">
+								<div class="arrow-up" ng-click="vote($event, 1);">UP</div>
+								<div class="vote-count">TOTAL: <?php print $reply['aggregateVotes'];?>
+								</div>
+								<div class="arrow-down" ng-click="vote($event, -1)";>DOWN</div>
+							</div>
 						</div>
 					</div>
 				<?php endif; ?>
 			<?php endforeach; ?>
-
-			<form action="reply_process.php?randomID=<?php print $post['randomID']; ?>" method="post">
-				<div class="form-group">
-					<label for="reply">Reply</label>
-			   		<textarea id="reply_text" name ="reply_text"></textarea>
-				</div>
-				<button type="submit" class="btn btn-primary">Reply</button>
-			</form>
+			<div class="col-sm-10 col-sm-offset-1 reply-submit">
+				<form action="reply_process.php?randomID=<?php print $post['randomID']; ?>" method="post">
+		   			<textarea class="reply-text" name ="reply_text"></textarea>
+					<button type="submit" class="btn btn-default">Reply</button>
+				</form>
+			</div>
 		</div>
 	<?php endforeach; ?>
-
 </body>
 </html>

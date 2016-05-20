@@ -3,26 +3,81 @@
 	background-color: black;
 	color: white;
 }
+.navbar-header{
+	width:70%;
+}
+.navbar-brand{
+	height: 50px;
+    font-size: 59px;
+}
+.welcome{
+	margin-top: 14px;
+}
+#title{
+	#title-message{
+		ul{
+			display: inline-block;
+		}
+	}
+}
 #home{
 	float:left;
 	a{
 		padding: 20px;
 	}
 }
-#login{
-	float:right;
-	a{
-		float: right;
-		padding: 20px;
+#init-post{
+	textarea{
+		width: 75%;
+	}
+	button{
+		margin-bottom: 30px;
 	}
 }
-.container{
-	width:100%;
-	margin-left: 0px;
-	margin-right: 0px;
+.post-messages{
+	background-color: gray;
+	.user{
+	    font-size: 20px;
+	    margin-left: 20px
+	}
+	.text{
+		margin-left: 20px;
+		border: 1px solid black;
+		background-color: white;
+    	font-size: 16px;
+    	width: 70%
+	}
+	.date{
+		margin-left: 20px;
+	}
 }
-#body{
-	height: 200px;
-	background-image: url('mantary.jpg');
-	
+
+.reply-info{
+	background-color: beige;
+	.reply-messages{
+		.user-reply{
+
+		}
+		.text-reply{
+			border: 1px solid black;
+			background-color: white;
+		}
+		.date-reply{
+
+		}
+	}
 }
+.reply-submit{
+	background-color: beige;
+	.reply-text{
+		background-color: white;
+		border: 1px solid black;
+		width: 62%;
+    	margin-left: 14px;
+	}
+	button{
+		margin-left: 20px;
+    	margin-bottom: 34px;
+	}
+}
+

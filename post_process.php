@@ -8,6 +8,7 @@
 		exit;
 	}
 	require_once 'includes/meekrodb.2.3.class.php';
+	require_once 'includes/db_connect.php';
 	DB::$user = 'x';
 	DB::$password = 'x';
 	DB::$dbName = 'mantaray';

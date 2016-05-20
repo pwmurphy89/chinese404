@@ -10,11 +10,11 @@
 	require_once 'includes/meekrodb.2.3.class.php';
 	require_once 'includes/db_connect.php';
 
-	DB::insert('replies', array(
+	$json_received = file_get_contents('php://input');
+	$decoded_json = json_decode($json_received, true);
+	$poster_username = $decoded_json['username'];
 
-		'username' =>$_SESSION['username'],
-		'reply_text' =>$_POST['reply_text'],
-		'randomID' => $_GET['randomID']
-		));
-	header('Location: index.php?reply=success');
-?>
+	DB::insert('following', array(
+		'follower' => $_SESSION['username'],
+		'poster' => $poster_username
+		))

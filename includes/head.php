@@ -1,15 +1,9 @@
 <?php
-require_once 'meekrodb.2.3.class.php';
-DB::$user = 'x';
-DB::$password = 'x';
-DB::$dbName = 'mantaray';
-DB::$host = '127.0.0.1'
-// session_start();
-
+require_once 'db_connect.php';
 ?>
 
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head>
 
 	<title>Chinese404</title>
@@ -20,4 +14,7 @@ DB::$host = '127.0.0.1'
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+	<script src="js/controller.js"></script>
+
 </head>

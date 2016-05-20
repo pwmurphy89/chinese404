@@ -1,5 +1,5 @@
 
-<body>
+<body ng-controller="myController">
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -9,7 +9,7 @@
         <li class="active"><a href="/">Posts</a></li>
         <?php
           if(isset($_SESSION['username'])){
-            print'<li>Welcome' .$_SESSION['username'].'</li>';
+            print'<li class="welcome">Welcome ' .$_SESSION['username']. '!'.'</li>';
             print '<li><a href="logout.php">Log Out</a></li>';
 
         }else{
@@ -20,9 +20,12 @@
       </ul>
     </div>
   </nav>
-  <div id="title"><h1>Welcome to Chinese404!</h1></div>
-  <div><h4> Your resource to connect with other students of Mandarin Chinese.</h4></div>
-  <div>Post a question for help!</div>
-  <div>Respond to others' questions!</div>
-  <div>Share resources!</div>
-  <div>Make friends and study together!</div>
+  <div id="title" class="text-center"><h1>Welcome to Chinese404!</h1></div>
+  <div id="title-message" class="text-center"><h4> Your resource to connect with other students of Mandarin Chinese.</h4></div>
+    <ul class="list-inline text-center">
+      <li>Post a question for help!</li>
+      <li>Respond to others' questions!</li>
+      <li>Share resources!</li>
+      <li>Make friends and study together!</li>
+    </ul>
+    <!-- <a href="follow.php">Follow someone...</a> -->
