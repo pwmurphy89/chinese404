@@ -12,9 +12,16 @@
 
 	$json_received = file_get_contents('php://input');
 	$decoded_json = json_decode($json_received, true);
-	$poster_username = $decoded_json['username'];
+	$poster = $decoded_json['username'];
+	$method = $decoded_json['method'];
 
-	DB::insert('following', array(
+	if ($method == 'follow'){
+		DB::insert('following', array(
 		'follower' => $_SESSION['username'],
-		'poster' => $poster_username
-		))
+		'poster' => $poster
+		));
+	}else if ($method == 'unfollow'){
+		DB::delete('following', "follower=%s AND poster=%s", $_SESSION['username'], $poster);
+	};
+	// $poster_username = $decoded_json['username'];
+

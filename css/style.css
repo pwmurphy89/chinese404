@@ -69,25 +69,26 @@
 /* line 55, ../compass/sass/style.scss */
 .reply-info {
   background-color: beige;
+  padding-bottom: 20px;
 }
-/* line 61, ../compass/sass/style.scss */
+/* line 62, ../compass/sass/style.scss */
 .reply-info .reply-messages .text-reply {
   border: 1px solid black;
   background-color: white;
 }
 
-/* line 70, ../compass/sass/style.scss */
+/* line 71, ../compass/sass/style.scss */
 .reply-submit {
   background-color: beige;
 }
-/* line 72, ../compass/sass/style.scss */
+/* line 73, ../compass/sass/style.scss */
 .reply-submit .reply-text {
   background-color: white;
   border: 1px solid black;
   width: 62%;
   margin-left: 14px;
 }
-/* line 78, ../compass/sass/style.scss */
+/* line 79, ../compass/sass/style.scss */
 .reply-submit button {
   margin-left: 20px;
   margin-bottom: 34px;

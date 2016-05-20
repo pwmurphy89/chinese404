@@ -2,9 +2,27 @@
 session_start();
 session_destroy();
 require_once 'includes/head.php';
-require_once 'includes/header.php';
-
-	print '<h2>Thank you for your support for the Mantarays</h2>';
-
-	require_once 'includes/footer.php';
 ?>
+<body ng-controller="myController">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Chinese404</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Posts</a></li>
+        <?php
+          print '<li><a href="register.php">Register</a></li>';
+          print '<li><a href="login.php">Login</a></li>';
+        ?>
+      </ul>
+    </div>
+  </nav>
+  <div id="title" class="text-center"><h1>Welcome to Chinese404!</h1></div>
+  <div id="title-message" class="text-center"><h4> Your resource to connect with other students of Mandarin Chinese.</h4></div>
+    <ul class="list-inline text-center">
+      <li>Post a question for help!</li>
+      <li>Respond to others' questions!</li>
+      <li>Share resources!</li>
+      <li>Make friends and study together!</li>
+    </ul>

@@ -15,6 +15,9 @@
 
 	$posts = DB::query("SELECT * FROM posts ORDER BY timestamp DESC; ");
 ?>
+
+
+	<a href="follow.php"><h1>Follow</h1></a>
   <div class="text-center"><h3>POSTS</h3></div>
 	<?php if (isset($_SESSION['username'])): ?>
 		<div class="container">

@@ -28,11 +28,12 @@ myApp.controller("myController", function($scope, $http){
 		});
 	}
 
-	$scope.follow = function(username){
+	$scope.follow = function(username, method){
 		$http.post('process_follow.php', {
-			poster: username,
+			username: username,
+			method: method
 		}).then(function successCallback(response){
-
+			$scope.message = "Now following " + username;
 		},function errorCallback(response){
 			console.log(response);
 		});
