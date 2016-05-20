@@ -20,6 +20,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-8 col-sm-offset-2">
+
 			<h1>Following</h1>
 			<?php foreach($following_array as $user): ?>
 				<div class="col-sm-8"><?php print $user;?></div>
@@ -32,7 +33,6 @@
 				<div class="col-sm-3"><button ng-click="follow('<?php print $user;?>', 'follow')" class="btn btn-primary">Follow</button>
 				</div>
 			<?php endforeach; ?>
-			<div>{{message}}</div>
 		</div>
 	</div>
 </div>

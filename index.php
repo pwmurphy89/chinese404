@@ -37,7 +37,7 @@
 
 	<?php foreach($posts as $post): ?>
 		<div class="container">
-			<div class="post-messages col-sm-12">
+			<div class="post-messages col-sm-10 col-sm-offset-1">
 				<div class="user">
 					<?php print $post['username']. " posted:"; ?>
 				</div>
@@ -66,7 +66,9 @@
 							</div>
 						</div>
 						<div class="vote-info col-sm-4">
+
 							<div id="<?php print $reply['id'];?>">
+								<div class="message">   </div>
 								<div class="arrow-up" ng-click="vote($event, 1);">UP</div>
 								<div class="vote-count">TOTAL: <?php print $reply['aggregateVotes'];?>
 								</div>

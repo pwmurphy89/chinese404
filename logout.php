@@ -26,3 +26,11 @@ require_once 'includes/head.php';
       <li>Share resources!</li>
       <li>Make friends and study together!</li>
     </ul>
+
+<div class="row">
+	<div class="col-sm-8 col-sm-offset-2 text-center">
+		<h3>You are now logged out.</h3>
+		<h5>We hope you have benefited from Chinese404!</h5>
+	</div>
+</div>
+

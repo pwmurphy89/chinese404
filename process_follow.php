@@ -23,5 +23,5 @@
 	}else if ($method == 'unfollow'){
 		DB::delete('following', "follower=%s AND poster=%s", $_SESSION['username'], $poster);
 	};
-	// $poster_username = $decoded_json['username'];
+	header("Location: follow.php?follow=added");;
 
