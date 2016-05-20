@@ -1,9 +1,9 @@
 <?php
+	session_start();
 		if(!isset($_SESSION['username'])){
 		header("Location: login.php?error=login");
 		exit;
-	}
-	session_start();
+		}
 	ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
@@ -11,7 +11,6 @@
 	require_once 'includes/db_connect.php';
 	require_once 'includes/head.php';
 	require_once 'includes/header.php';
-
 
 	$following_array = DB::queryOneColumn('poster', "SELECT poster FROM following WHERE follower = %s", $_SESSION['username']);
 
