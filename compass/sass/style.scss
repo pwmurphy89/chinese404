@@ -1,25 +1,52 @@
-#nav{
-	height: 100px;
-	background-color: black;
-	color: white;
+#header{
+	background-image: url("../images/header-back.jpg");
+	color: #F7D107;
+	height:100px;
+	font-family: impact;
 }
-.navbar-header{
-	width:70%;
+.navbar{
+	margin-bottom: 0px;
 }
-.navbar-brand{
-	height: 50px;
-    font-size: 59px;
-}
-.welcome{
-	margin-top: 14px;
-}
-#title{
-	#title-message{
-		ul{
-			display: inline-block;
-		}
+.navbar-default .navbar-nav {
+	margin-top: 20px;
+	li>a {
+    color: gold;
 	}
 }
+.navbar-header{
+	margin-top: 20px;
+	.navbar-brand{
+		height: 50px;
+	    font-size: 59px;
+	    color: gold;
+	}
+	.navbar-brand:hover{
+		color:black;
+	}
+}
+.welcome{
+	color: white;
+	width: 30%;
+	margin-top: 14px;
+}
+.nav-options{
+	font-size: 18px;
+	}
+
+#title{
+	h1{
+		font-size: 38px;
+	}
+	padding-top:10px;
+	ul{
+		margin-top: -5px;
+	    background-color: gray;
+	    color: white;
+	    border: 1px solid black;
+	}
+}
+
+
 #home{
 	float:left;
 	a{
@@ -27,41 +54,51 @@
 	}
 }
 #init-post{
+	height: 40px;
 	textarea{
+		height:30px;
 		width: 75%;
 	}
 	button{
-		margin-bottom: 30px;
+		width: 45px;
+		padding: 2px;
+		height:30px;
+		margin-bottom: 24px;
 	}
 }
+.container.post{
+	margin-top: 10px;
+}
 .post-messages{
-	background-color: gray;
+	padding: 12px;
+	border: 1px solid black;
+	border-radius: 10px 10px 0px 0px;
+	background-color: #F9F5F5;
 	.user{
 	    font-size: 20px;
-	    margin-left: 20px
 	}
 	.text{
-		margin-left: 20px;
 		border: 1px solid black;
 		background-color: white;
     	font-size: 16px;
     	width: 70%
 	}
 	.date{
-		margin-left: 20px;
 	}
 }
 
 .reply-info{
-	background-color: beige;
-	padding-bottom: 20px;
+	border: 1px solid black;
+	background-color: #F9F5F5;
+	padding: 10px;
 	.reply-messages{
 		.user-reply{
-
+			font-size: 16px;
 		}
 		.text-reply{
 			border: 1px solid black;
 			background-color: white;
+			height: 25px;
 		}
 		.date-reply{
 
@@ -69,16 +106,40 @@
 	}
 }
 .reply-submit{
-	background-color: beige;
+	height: 27px;
+	border: 1px solid black;
+	border-radius: 0px 0px 10px 10px;
+	background-color: #F9F5F5;
+	form{
+		height: 100%;
+	}
 	.reply-text{
 		background-color: white;
 		border: 1px solid black;
+		height: 25px;
 		width: 62%;
     	margin-left: 14px;
 	}
 	button{
-		margin-left: 20px;
-    	margin-bottom: 34px;
+		height: 100%;
+		margin-left: 0px;
+    	margin-bottom: 17px;
 	}
+}
+#follow-info{
+	border: 1px solid black;
+    border-radius: 5px;
+    h1{
+    	text-align: center;
+    	color: #B91818
+    }
+    button{
+    	padding: 1px;
+    }
+    .follow-one{
+    	border: 1px solid black;
+    	border-radius: 4px;
+    	background-color: beige;
+    }
 }
 

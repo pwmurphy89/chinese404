@@ -1,95 +1,178 @@
 /* line 1, ../compass/sass/style.scss */
-#nav {
+#header {
+  background-image: url("../images/header-back.jpg");
+  color: #F7D107;
   height: 100px;
-  background-color: black;
-  color: white;
+  font-family: impact;
 }
 
-/* line 6, ../compass/sass/style.scss */
+/* line 7, ../compass/sass/style.scss */
+.navbar {
+  margin-bottom: 0px;
+}
+
+/* line 10, ../compass/sass/style.scss */
+.navbar-default .navbar-nav {
+  margin-top: 20px;
+}
+/* line 12, ../compass/sass/style.scss */
+.navbar-default .navbar-nav li > a {
+  color: gold;
+}
+
+/* line 16, ../compass/sass/style.scss */
 .navbar-header {
-  width: 70%;
+  margin-top: 20px;
 }
-
-/* line 9, ../compass/sass/style.scss */
-.navbar-brand {
+/* line 18, ../compass/sass/style.scss */
+.navbar-header .navbar-brand {
   height: 50px;
   font-size: 59px;
+  color: gold;
+}
+/* line 23, ../compass/sass/style.scss */
+.navbar-header .navbar-brand:hover {
+  color: black;
 }
 
-/* line 13, ../compass/sass/style.scss */
+/* line 27, ../compass/sass/style.scss */
 .welcome {
+  color: white;
+  width: 30%;
   margin-top: 14px;
 }
 
-/* line 18, ../compass/sass/style.scss */
-#title #title-message ul {
-  display: inline-block;
+/* line 32, ../compass/sass/style.scss */
+.nav-options {
+  font-size: 18px;
 }
 
-/* line 23, ../compass/sass/style.scss */
+/* line 36, ../compass/sass/style.scss */
+#title {
+  padding-top: 10px;
+}
+/* line 37, ../compass/sass/style.scss */
+#title h1 {
+  font-size: 38px;
+}
+/* line 41, ../compass/sass/style.scss */
+#title ul {
+  margin-top: -5px;
+  background-color: gray;
+  color: white;
+  border: 1px solid black;
+}
+
+/* line 50, ../compass/sass/style.scss */
 #home {
   float: left;
 }
-/* line 25, ../compass/sass/style.scss */
+/* line 52, ../compass/sass/style.scss */
 #home a {
   padding: 20px;
 }
 
-/* line 30, ../compass/sass/style.scss */
+/* line 56, ../compass/sass/style.scss */
+#init-post {
+  height: 40px;
+}
+/* line 58, ../compass/sass/style.scss */
 #init-post textarea {
+  height: 30px;
   width: 75%;
 }
-/* line 33, ../compass/sass/style.scss */
+/* line 62, ../compass/sass/style.scss */
 #init-post button {
-  margin-bottom: 30px;
+  width: 45px;
+  padding: 2px;
+  height: 30px;
+  margin-bottom: 24px;
 }
 
-/* line 37, ../compass/sass/style.scss */
-.post-messages {
-  background-color: gray;
+/* line 69, ../compass/sass/style.scss */
+.container.post {
+  margin-top: 10px;
 }
-/* line 39, ../compass/sass/style.scss */
+
+/* line 72, ../compass/sass/style.scss */
+.post-messages {
+  padding: 12px;
+  border: 1px solid black;
+  border-radius: 10px 10px 0px 0px;
+  background-color: #F9F5F5;
+}
+/* line 77, ../compass/sass/style.scss */
 .post-messages .user {
   font-size: 20px;
-  margin-left: 20px;
 }
-/* line 43, ../compass/sass/style.scss */
+/* line 80, ../compass/sass/style.scss */
 .post-messages .text {
-  margin-left: 20px;
   border: 1px solid black;
   background-color: white;
   font-size: 16px;
   width: 70%;
 }
-/* line 50, ../compass/sass/style.scss */
-.post-messages .date {
-  margin-left: 20px;
-}
 
-/* line 55, ../compass/sass/style.scss */
+/* line 90, ../compass/sass/style.scss */
 .reply-info {
-  background-color: beige;
-  padding-bottom: 20px;
+  border: 1px solid black;
+  background-color: #F9F5F5;
+  padding: 10px;
 }
-/* line 62, ../compass/sass/style.scss */
+/* line 95, ../compass/sass/style.scss */
+.reply-info .reply-messages .user-reply {
+  font-size: 16px;
+}
+/* line 98, ../compass/sass/style.scss */
 .reply-info .reply-messages .text-reply {
   border: 1px solid black;
   background-color: white;
+  height: 25px;
 }
 
-/* line 71, ../compass/sass/style.scss */
+/* line 108, ../compass/sass/style.scss */
 .reply-submit {
-  background-color: beige;
+  height: 27px;
+  border: 1px solid black;
+  border-radius: 0px 0px 10px 10px;
+  background-color: #F9F5F5;
 }
-/* line 73, ../compass/sass/style.scss */
+/* line 113, ../compass/sass/style.scss */
+.reply-submit form {
+  height: 100%;
+}
+/* line 116, ../compass/sass/style.scss */
 .reply-submit .reply-text {
   background-color: white;
   border: 1px solid black;
+  height: 25px;
   width: 62%;
   margin-left: 14px;
 }
-/* line 79, ../compass/sass/style.scss */
+/* line 123, ../compass/sass/style.scss */
 .reply-submit button {
-  margin-left: 20px;
-  margin-bottom: 34px;
+  height: 100%;
+  margin-left: 0px;
+  margin-bottom: 17px;
+}
+
+/* line 129, ../compass/sass/style.scss */
+#follow-info {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+/* line 132, ../compass/sass/style.scss */
+#follow-info h1 {
+  text-align: center;
+  color: #B91818;
+}
+/* line 136, ../compass/sass/style.scss */
+#follow-info button {
+  padding: 1px;
+}
+/* line 139, ../compass/sass/style.scss */
+#follow-info .follow-one {
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: beige;
 }

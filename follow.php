@@ -21,19 +21,26 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-sm-8 col-sm-offset-2">
+		<div id="follow-info" class="col-sm-8 col-sm-offset-2">
 			<h1>Following</h1>
 			<?php foreach($following_array as $user): ?>
-				<div class="col-sm-8"><?php print $user;?></div>
-				<div class="col-sm-4"><button ng-click="follow('<?php print $user;?>', 'unfollow')" class="btn btn-primary">UnFollow</button>
+				<div class="follow-one col-sm-12">
+					<div class="col-sm-8"><?php print $user;?></div>
+					<div class="col-sm-4"><button ng-click="follow('<?php print $user;?>', 'unfollow')" class="btn btn-default">UnFollow</button>
+					</div>
 				</div>
 			<?php endforeach; ?>
 			<h1>Not following</h1>
 			<?php foreach($not_following_array as $user): ?>
-				<div class="col-sm-8"><?php print $user;?></div>
-				<div class="col-sm-3"><button ng-click="follow('<?php print $user;?>', 'follow')" class="btn btn-primary">Follow</button>
+				<div class="follow-one col-sm-12">
+					<div class="col-sm-8"><?php print $user;?></div>
+					<div class="col-sm-3"><button ng-click="follow('<?php print $user;?>', 'follow')" class="btn btn-default">Follow</button>
+					</div>
 				</div>
 			<?php endforeach; ?>
 		</div>
 	</div>
 </div>
+<script>
+  $.backstretch("images/back2.jpg");
+</script>

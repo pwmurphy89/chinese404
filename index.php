@@ -15,16 +15,12 @@
 
 	$posts = DB::query("SELECT * FROM posts ORDER BY timestamp DESC; ");
 ?>
-
-
-	<a href="follow.php"><h1>Follow</h1></a>
-  <div class="text-center"><h3>POSTS</h3></div>
+	<div class="text-center"><h3>POSTS</h3></div>
 	<?php if (isset($_SESSION['username'])): ?>
 		<div class="container">
-			<div id="init-post" class="row">
+			<div id="init-post" class="row text-center">
 				<div class="form-group col-sm-10 col-sm-offset-1">
 					<form action="post_process.php" method="post">
-						<label for="post">POST</label>
 					    <textarea id="post-text" name ="post_text"></textarea>
 						<button type="submit" class="btn btn-default">Post</button>
 					</form>
@@ -36,7 +32,7 @@
 	<?php endif; ?>
 
 	<?php foreach($posts as $post): ?>
-		<div class="container">
+		<div class="container post">
 			<div class="post-messages col-sm-10 col-sm-offset-1">
 				<div class="user">
 					<?php print $post['username']. " posted:"; ?>
@@ -65,14 +61,13 @@
 								?>
 							</div>
 						</div>
-						<div class="vote-info col-sm-4">
-
+						<div class="vote-info col-sm-4 text-center">
 							<div id="<?php print $reply['id'];?>">
 								<div class="message">   </div>
-								<div class="arrow-up" ng-click="vote($event, 1);">UP</div>
+								<div class="arrow-up" ng-click="vote($event, 1);"><span class="glyphicon glyphicon-arrow-up"></span></div>
 								<div class="vote-count">TOTAL: <?php print $reply['aggregateVotes'];?>
 								</div>
-								<div class="arrow-down" ng-click="vote($event, -1)";>DOWN</div>
+								<div class="arrow-down" ng-click="vote($event, -1)";><span class="glyphicon glyphicon-arrow-down"></span></div>
 							</div>
 						</div>
 					</div>
@@ -86,5 +81,9 @@
 			</div>
 		</div>
 	<?php endforeach; ?>
+
+<script>
+  $.backstretch("images/back2.jpg");
+</script>
 </body>
 </html>
