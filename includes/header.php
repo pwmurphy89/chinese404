@@ -3,7 +3,7 @@
   <nav class="navbar navbar-default">
     <div id="header" class="container-fluid">
       <div class="navbar-header col-sm-7">
-        <a class="navbar-brand" href="chinese404/index.php">Chinese404</a>
+        <a class="navbar-brand" href="index.php">Chinese404</a>
       </div>
       <ul class="nav navbar-nav col-sm-5 list-inline">
         <?php
@@ -14,7 +14,7 @@
             print '<li class="nav-options"><a href="logout.php">Log Out</a></li>';
 
           }else{
-            print'<li class="nav-options"><a href="/">Posts</a></li>';
+            print'<li class="nav-options"><a href="index.php">Posts</a></li>';
             print '<li class="nav-options"><a href="register.php">Register</a></li>';
             print '<li class="nav-options"><a href="login.php">Login</a></li>';
           }
