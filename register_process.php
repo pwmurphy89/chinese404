@@ -28,12 +28,12 @@
 				));
 			$_SESSION['username'] = $_POST['username'];
 			$_SESSION['email'] = $_POST['email'];
-			header('Location: /index.php?register=success');
+			header('Location: index.php?register=success');
 		}catch(MeekroDBException $e){
-			header("Location: /register.php?error=yes");
+			header("Location: register.php?error=yes");
 			exit;
 		}
 	}else{
-		header('Location: /register.php?error=usernameexists');
+		header('Location: register.php?error=usernameexists');
 	}
 ?>
